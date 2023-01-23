@@ -1,0 +1,161 @@
+$yellow: #ffe505;
+$yellowLight: #fffee0;
+$green: #75975e;
+$greenLight: #c7ddb5;
+$red: #f94449;
+$redLight: #f69697;
+$orange: #e69b00;
+$orangeLight: #e6b400;
+$blue: #9acef8;
+$blueLight: #c3e3fd;
+$violet: #da8ee7;
+$violetLight: #e8bcf0;
+$pink: #efc3ca;
+$pinkLight: #efdbde;
+
+#notes {
+    position: relative;
+    flex-grow: 1;
+}
+
+.note {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid;
+    z-index: 0;
+
+    &:not(.image-note) {
+        min-height: 300px;
+    } 
+    
+    &.selected {
+        background-color: #fff;
+        z-index: 1;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.10);
+    }
+}
+
+.note__drag-handler {
+    height: 2rem;
+    opacity: 0.4;
+    cursor: move;
+}
+
+.note__body {
+    position: relative;
+    flex-grow: 1;
+    
+    &:focus {
+        outline: none;
+    }
+
+    .image-note & {
+        padding: 0 !important;
+    }
+}
+
+.note__settings {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+
+    &-color {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid;
+        cursor: pointer;
+
+        &:hover {
+            border-color: #333;
+        }
+    }
+
+    ul {
+        flex-grow: 1;
+        text-align: left;
+    }
+}
+
+.delete-note {
+    color: #f94449;
+}
+
+.open-lightbox {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 1;
+    color: #fff;
+}
+
+.note,
+.yellow {
+    background-color: $yellowLight;
+    border-color: $yellow;
+
+    & .note__drag-handler {
+        background-color: $yellow;
+    }
+}
+
+.green {
+    background-color: $greenLight;
+    border-color: $green;
+
+    & .note__drag-handler {
+        background-color: $green;
+    }
+}
+
+.red {
+    background-color: $redLight;
+    border-color: $red;
+    
+    & .note__drag-handler {
+        background-color: $red;
+    }
+}
+
+.orange {
+    background-color: $orangeLight;
+    border-color: $orange;
+    
+    & .note__drag-handler {
+        background-color: $orange;
+    }
+}
+
+.blue {
+    background-color: $blueLight;
+    border-color: $blue;
+    
+    & .note__drag-handler {
+        background-color: $blue;
+    }
+}
+
+.violet {
+    background-color: $violetLight;
+    border-color: $violet;
+    
+    & .note__drag-handler {
+        background-color: $violet;
+    }
+}
+
+.pink {
+    background-color: $pinkLight;
+    border-color: $pink;
+    
+    & .note__drag-handler {
+        background-color: $pink;
+    }
+}
